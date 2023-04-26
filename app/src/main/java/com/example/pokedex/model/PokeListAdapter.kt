@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
+import com.example.pokedex.model.PokeInfoViewModel
 import com.example.pokedex.api.PokeResult
 import com.example.pokedex.databinding.PokeListBinding
 
@@ -27,12 +27,10 @@ class PokeListAdapter(private val pokemonClick: (Int) -> Unit): RecyclerView.Ada
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val binding = holder.binding
-        val pokemon = pokemonList[position]
-
-        binding.pokemonText.text = "#${position + 1} - ${pokemon.name}"
-        Glide.with(holder.itemView.context).load(pokemon.frontDefault).into(binding.imageView)
+        val pokemonList = pokemonList[position]
+        binding.pokemonText.text = "#${position + 1} - ${pokemonList.name}"
+        Glide.with(holder.itemView.context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${position + 1}.png").into(binding.pokeView)
         holder.itemView.setOnClickListener { pokemonClick(position + 1) }
-
     }
 
     class SearchViewHolder(val binding: PokeListBinding): RecyclerView.ViewHolder(binding.root)
