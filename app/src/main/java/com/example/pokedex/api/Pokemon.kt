@@ -19,6 +19,13 @@ data class FlavorTextEntry(
     @Expose @SerializedName("language") val language: Language
 )
 
+data class PokeResult (
+    @Expose @SerializedName("id") val id: Int,
+    @Expose @SerializedName("sprites") val sprites: Sprites,
+    @Expose @SerializedName("name") val name: String,
+    @Expose @SerializedName("url") val url: String
+)
+
 data class Language(
     @Expose @SerializedName("name") val name: String,
     @Expose @SerializedName("url") val url: String
@@ -26,14 +33,6 @@ data class Language(
 data class Sprites(
     @Expose @SerializedName("front_default") val frontDefault: String?,
     @Expose @SerializedName("front_female") val frontFemale: String?,
-)
-
-data class PokeResult (
-    @Expose @SerializedName("id") val id: Int,
-    @Expose @SerializedName("front_default") val frontDefault: String?,
-    @Expose @SerializedName("front_female") val frontFemale: String?,
-    @Expose @SerializedName("name") val name: String,
-    @Expose @SerializedName("url") val url: String
 )
 
 data class Type(

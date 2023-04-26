@@ -3,6 +3,7 @@ package com.example.pokedex.model
 import android.graphics.PointF.length
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
 import com.example.pokedex.api.ApiService
 import com.example.pokedex.api.PokeApiResponse
 import com.example.pokedex.api.PokeResult
@@ -25,6 +26,7 @@ class PokeListViewModel() : ViewModel() {
 
     fun getPokemonList(){
         val call = service.getPokemonList(300,0)
+
         call.enqueue(object : Callback<PokeApiResponse> {
             override fun onResponse(call: Call<PokeApiResponse>, response: Response<PokeApiResponse>) {
                 response.body()?.results?.let { list ->

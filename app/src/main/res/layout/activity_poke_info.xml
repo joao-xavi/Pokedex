@@ -99,7 +99,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weightText"
-            tools:text="Descrição: area 1" />
+            tools:text="Descrição" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier2"

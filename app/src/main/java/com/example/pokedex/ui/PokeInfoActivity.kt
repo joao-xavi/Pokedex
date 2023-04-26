@@ -31,9 +31,9 @@ class PokeInfoActivity : AppCompatActivity() {
             val typeNames = pokemon.types.map { it.type.name }
             binding.nameTextView.text = pokemon.name
             binding.heightText.text = "Altura: ${pokemon.height / 10.0}m"
-            binding.weightText.text = "Peso: ${pokemon.weight / 10.0}"
+            binding.weightText.text = "Peso: ${pokemon.weight / 10.0}kgs"
             binding.typeText.text = "Tipo: ${typeNames.joinToString()}"
-            binding.descriptionText.text = "Descrição: ${binding.descriptionText.text}"
+            binding.descriptionText.text = binding.descriptionText.text
 
 
 
