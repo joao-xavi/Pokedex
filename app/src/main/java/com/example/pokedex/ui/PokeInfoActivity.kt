@@ -46,9 +46,9 @@ class PokeInfoActivity : AppCompatActivity() {
 
             val englishEntries = pokemon.flavorTextEntries.filter { it.language.name == "en" }
 
-            val spanishText = englishEntries.firstOrNull()?.flavorText
+            val englishText = englishEntries.firstOrNull()?.flavorText
 
-            binding.descriptionText.text = spanishText ?: ""
+            binding.descriptionText.text = englishText ?: ""
 
             viewModel.pokemonInfo.value?.englishFlavorTextEntries =
                 englishEntries.map { it.flavorText }

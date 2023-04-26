@@ -1,10 +1,12 @@
 package com.example.pokedex.model
 
+import android.graphics.PointF.length
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.pokedex.api.ApiService
 import com.example.pokedex.api.PokeApiResponse
 import com.example.pokedex.api.PokeResult
+import com.example.pokedex.api.Pokemon
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,8 +24,7 @@ class PokeListViewModel() : ViewModel() {
     val pokemonList = MutableLiveData<List<PokeResult>>()
 
     fun getPokemonList(){
-        val call = service.getPokemonList(251,0)
-
+        val call = service.getPokemonList(300,0)
         call.enqueue(object : Callback<PokeApiResponse> {
             override fun onResponse(call: Call<PokeApiResponse>, response: Response<PokeApiResponse>) {
                 response.body()?.results?.let { list ->

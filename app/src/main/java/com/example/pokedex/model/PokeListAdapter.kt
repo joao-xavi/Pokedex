@@ -3,6 +3,7 @@ package com.example.pokedex.model
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 import com.example.pokedex.api.PokeResult
 import com.example.pokedex.databinding.PokeListBinding
@@ -29,8 +30,9 @@ class PokeListAdapter(private val pokemonClick: (Int) -> Unit): RecyclerView.Ada
         val pokemon = pokemonList[position]
 
         binding.pokemonText.text = "#${position + 1} - ${pokemon.name}"
-
+        Glide.with(holder.itemView.context).load(pokemon.frontDefault).into(binding.imageView)
         holder.itemView.setOnClickListener { pokemonClick(position + 1) }
+
     }
 
     class SearchViewHolder(val binding: PokeListBinding): RecyclerView.ViewHolder(binding.root)

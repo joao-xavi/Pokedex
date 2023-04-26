@@ -6,9 +6,12 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.example.pokedex.api.Sprites
 import com.example.pokedex.model.PokeListAdapter
 import com.example.pokedex.model.PokeListViewModel
 import com.example.pokedex.databinding.ActivityMainBinding
+import com.example.pokedex.model.PokeInfoViewModel
 
 class PokemonList : AppCompatActivity() {
 
@@ -38,10 +41,10 @@ class PokemonList : AppCompatActivity() {
 
 
         binding.pokelistRecyclerView.adapter = pokeListAdapter
-
         viewModel.getPokemonList()
         viewModel.pokemonList.observe(this, Observer { list ->
             pokeListAdapter.setData(list)
+
         })
     }
 }
