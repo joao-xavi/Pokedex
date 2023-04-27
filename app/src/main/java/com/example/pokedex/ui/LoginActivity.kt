@@ -33,12 +33,14 @@ class LoginActivity : AppCompatActivity() {
                     if (isLoggedIn) {
                         runOnUiThread {
                             Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@LoginActivity, PokemonList::class.java)
                             startActivity(intent)
+                            finish()
                         }
                     } else {
                         runOnUiThread {
                             Toast.makeText(applicationContext, "Invalid email or password", Toast.LENGTH_SHORT).show()
-)
+                            startActivity(intent)
                         }
                     }
                 }
