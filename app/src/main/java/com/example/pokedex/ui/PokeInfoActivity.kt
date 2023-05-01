@@ -30,9 +30,9 @@ class PokeInfoActivity : AppCompatActivity() {
         viewModel.pokemonInfo.observe(this, Observer { pokemon ->
             val typeNames = pokemon.types.map { it.type.name }
             binding.nameTextView.text = pokemon.name
-            binding.heightText.text = "Altura: ${pokemon.height / 10.0}m"
-            binding.weightText.text = "Peso: ${pokemon.weight / 10.0}kgs"
-            binding.typeText.text = "Tipo: ${typeNames.joinToString()}"
+            binding.heightText.text = "Height: ${pokemon.height / 10.0}m"
+            binding.weightText.text = "Weight: ${pokemon.weight / 10.0}kgs"
+            binding.typeText.text = "Type: ${typeNames.joinToString()}"
             binding.descriptionText.text = binding.descriptionText.text
 
 
