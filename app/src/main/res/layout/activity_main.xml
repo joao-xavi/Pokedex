@@ -14,10 +14,11 @@
         android:layout_marginTop="96dp"
         android:background="#bababa"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="3"
         tools:itemCount="9"
-        tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/poke_list" />
 
     <Button
@@ -26,7 +27,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="12dp"
-        android:text="Favoritos"
+        android:text="Starred"
         app:layout_constraintBottom_toTopOf="@+id/pokelistRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
