@@ -25,6 +25,9 @@
             android:name=".ui.PokemonList"
             android:label="Pokemon List" />
         <activity
+            android:name=".ui.FavList"
+            android:label="Favorites List" />
+        <activity
             android:name=".ui.HomeActivity"
             android:exported="true">
             <intent-filter>

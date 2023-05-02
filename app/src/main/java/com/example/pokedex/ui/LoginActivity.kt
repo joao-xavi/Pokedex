@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pokedex.database.MySingleton
 import com.example.pokedex.database.UserDatabase
 import com.example.pokedex.database.UserRepository
 import com.example.pokedex.databinding.ActivityLoginBinding
@@ -32,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
                     val isLoggedIn = userRepository.login(email, password)
                     if (isLoggedIn) {
                         runOnUiThread {
+                            MySingleton.currentUserEmail = email
                             Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@LoginActivity, PokemonList::class.java)
                             startActivity(intent)

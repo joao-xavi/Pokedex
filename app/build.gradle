@@ -38,9 +38,11 @@ android {
         dataBinding true
         viewBinding true
     }
+
 }
 
 dependencies {
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
     implementation 'androidx.room:room-ktx:2.5.1'
     implementation 'androidx.databinding:databinding-runtime'
     implementation 'androidx.room:room-runtime:2.5.1'

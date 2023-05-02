@@ -7,78 +7,70 @@
     android:background="#d3d3d3">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="382dp"
-        android:layout_height="249dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
-        app:cardElevation="0dp"
+        app:cardBackgroundColor="#f9f9f9"
         app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="#f9f9f9">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="383dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
             <ImageView
                 android:id="@+id/pokeView"
                 android:layout_width="218dp"
                 android:layout_height="206dp"
-<<<<<<< Updated upstream
-                android:layout_marginTop="32dp"
-=======
-                android:layout_marginTop="20dp"
->>>>>>> Stashed changes
+                android:layout_marginTop="8dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/pokemon_img"
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< Updated upstream
-=======
-                app:layout_constraintHorizontal_bias="0.496"
->>>>>>> Stashed changes
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
-
             <TextView
                 android:id="@+id/pokemonText"
-                android:layout_width="166dp"
-                android:layout_height="62dp"
-                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/poke_entry"
+                android:layout_marginBottom="16dp"
                 android:foregroundGravity="center"
                 android:gravity="center"
-                android:padding="20dp"
-                android:text="Text"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.095"
+                app:layout_constraintVertical_bias="0.0"
                 tools:text="#001 - Pikachu" />
 
             <Button
                 android:id="@+id/favButton"
-                android:layout_width="50dp"
-                android:layout_height="39dp"
-                android:text="☆"
+                android:layout_width="91dp"
+                android:layout_height="37dp"
+                android:text="fav"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/pokeView"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="@+id/pokeView"
-                app:layout_constraintTop_toBottomOf="@+id/pokeView" />
+                app:layout_constraintTop_toTopOf="@+id/pokeView"
+                app:layout_constraintVertical_bias="1.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

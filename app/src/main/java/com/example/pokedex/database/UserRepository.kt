@@ -9,4 +9,10 @@ class UserRepository(private val userDao: UserDao) {
         val user = userDao.getUser(email, password)
         return user != null
     }
+
+    suspend fun getUserByEmail(email: String): User? {
+        return userDao.getUserByEmail(email)
+    }
+
+
 }
