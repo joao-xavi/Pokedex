@@ -10,12 +10,12 @@ import androidx.room.PrimaryKey
         ForeignKey(
             entity = User::class,
             parentColumns = ["id"],
-            childColumns = ["user_id"],
+            childColumns = ["userId"],
             onDelete = ForeignKey.CASCADE
         )
     ],
     indices = [
-        Index(value = ["user_id"])
+        Index(value = ["userId"])
     ]
 )
 data class FavoritePokemon(

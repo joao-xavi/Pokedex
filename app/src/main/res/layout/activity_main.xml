@@ -22,7 +22,7 @@
         tools:listitem="@layout/poke_list" />
 
     <Button
-        android:id="@+id/favs"
+        android:id="@+id/starredButton"
         android:layout_width="126dp"
         android:layout_height="51dp"
         android:layout_marginStart="28dp"

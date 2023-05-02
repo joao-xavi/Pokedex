@@ -12,7 +12,7 @@ interface FavoritePokemonDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFavoritePokemon(favoritePokemon: FavoritePokemon)
 
-    @Query("SELECT * FROM favorite_pokemon WHERE userId = :userId")
+    @Query("SELECT * FROM favorite_pokemon_table WHERE userId = :userId")
     fun getFavoritePokemonByUserId(userId: Int): LiveData<List<FavoritePokemon>>
 
 }

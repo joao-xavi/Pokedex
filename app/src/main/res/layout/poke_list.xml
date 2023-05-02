@@ -61,7 +61,7 @@
                 tools:text="#001 - Pikachu" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/favButton"
                 android:layout_width="91dp"
                 android:layout_height="37dp"
                 android:text="fav"
