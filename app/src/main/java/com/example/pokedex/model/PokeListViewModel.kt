@@ -17,6 +17,7 @@ import com.example.pokedex.api.PokeApiResponse
 import com.example.pokedex.api.PokeResult
 import com.example.pokedex.api.Pokemon
 import com.example.pokedex.database.FavoritePokemonRepository
+import com.example.pokedex.database.MySingleton
 import com.example.pokedex.database.UserDatabase
 import com.example.pokedex.databinding.ActivityFavListBinding
 import com.example.pokedex.ui.PokeInfoActivity
@@ -43,6 +44,7 @@ class PokeListViewModel() : ViewModel() {
             override fun onResponse(call: Call<PokeApiResponse>, response: Response<PokeApiResponse>) {
                 response.body()?.results?.let { list ->
                     pokemonList.postValue(list)
+                    MySingleton.pokemonList = list
                 }
 
             }

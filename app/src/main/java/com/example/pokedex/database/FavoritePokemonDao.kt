@@ -13,6 +13,6 @@ interface FavoritePokemonDao {
     suspend fun insertFavoritePokemon(favoritePokemon: FavoritePokemon)
 
     @Query("SELECT * FROM favorite_pokemon_table WHERE userId = :userId")
-    fun getFavoritePokemonByUserId(userId: Int): LiveData<List<FavoritePokemon>>
+    fun getFavoritePokemonByUserId(userId: Int): List<FavoritePokemon>
 
 }

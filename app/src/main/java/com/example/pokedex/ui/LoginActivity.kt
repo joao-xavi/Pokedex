@@ -10,6 +10,8 @@ import com.example.pokedex.database.UserRepository
 import com.example.pokedex.databinding.ActivityLoginBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -32,14 +34,21 @@ class LoginActivity : AppCompatActivity() {
                 CoroutineScope(Dispatchers.IO).launch {
                     val isLoggedIn = userRepository.login(email, password)
                     if (isLoggedIn) {
-                        runOnUiThread {
-                            MySingleton.currentUserEmail = email
-                            Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_SHORT).show()
+                        GlobalScope.launch(Dispatchers.Main) {
+                            val result = async(Dispatchers.IO) {
+                                MySingleton.currentUserEmail = email
+                                MySingleton.currentUserId = userRepository.getUserByEmail(email)!!.id
+                                // Return a success message
+                                "Login successful!"
+                            }
+                            Toast.makeText(applicationContext, result.await(), Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@LoginActivity, PokemonList::class.java)
                             startActivity(intent)
                             finish()
                         }
-                    } else {
+                    }
+
+                else {
                         runOnUiThread {
                             Toast.makeText(applicationContext, "Invalid email or password", Toast.LENGTH_SHORT).show()
                             startActivity(intent)

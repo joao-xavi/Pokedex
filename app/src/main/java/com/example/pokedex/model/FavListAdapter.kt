@@ -30,9 +30,9 @@ class FavListAdapter(private var context: Context, private val pokemonClick: (In
         val binding = holder.binding
         val pokemonList = favoritePokemonList[position]
 
-        binding.pokemonText.text = "#${position + 1} - ${pokemonList.name}"
-        Glide.with(holder.itemView.context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${position + 1}.png").into(binding.pokeView)
-        holder.itemView.setOnClickListener { pokemonClick(position + 1) }
+        binding.pokemonText.text = "#${pokemonList.id} - ${pokemonList.name}"
+        Glide.with(holder.itemView.context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonList.id + 1}.png").into(binding.pokeView)
+        holder.itemView.setOnClickListener { pokemonClick(pokemonList.id + 1) }
     }
 
     class FavListViewHolder(val binding: FavoritePokemonListBinding): RecyclerView.ViewHolder(binding.root)

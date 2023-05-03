@@ -34,6 +34,7 @@ class PokeListAdapter(private var context: Context, private val pokemonClick: (I
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val binding = holder.binding
         val pokemonList = pokemonList[position]
+
         binding.pokemonText.text = "#${position + 1} - ${pokemonList.name}"
         Glide.with(holder.itemView.context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${position + 1}.png").into(binding.pokeView)
         holder.itemView.setOnClickListener { pokemonClick(position + 1) }

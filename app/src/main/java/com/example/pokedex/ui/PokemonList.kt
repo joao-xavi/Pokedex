@@ -25,7 +25,6 @@ class PokemonList : AppCompatActivity() {
 
     private lateinit var viewModel: PokeListViewModel
     private lateinit var binding: ActivityMainBinding
-    private lateinit var bindingList: PokeListBinding
     private lateinit var pokeListAdapter: PokeListAdapter
 
 
@@ -49,15 +48,12 @@ class PokemonList : AppCompatActivity() {
 
         binding.pokelistRecyclerView.layoutManager = GridLayoutManager(this, 2)
 
-
-
         pokeListAdapter = PokeListAdapter(this.applicationContext) {
             val intent = Intent(this, PokeInfoActivity::class.java)
             intent.putExtra("id", it)
             intent.putExtra("sprites", true)
             startActivity(intent)
         }
-
 
         binding.pokelistRecyclerView.adapter = pokeListAdapter
 

@@ -20,9 +20,9 @@ data class FlavorTextEntry(
 )
 
 data class PokeResult (
-    @Expose @SerializedName("id") val id: Int,
+    @Expose @SerializedName("id") var id: Int,
     @Expose @SerializedName("sprites") val sprites: Sprites,
-    @Expose @SerializedName("name") val name: String,
+    @Expose @SerializedName("name") var name: String,
     @Expose @SerializedName("url") val url: String
 )
 
